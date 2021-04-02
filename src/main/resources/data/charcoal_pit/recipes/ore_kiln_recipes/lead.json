@@ -1,0 +1,20 @@
+{
+  "type": "charcoal_pit:orekiln",
+  "ingredients": [
+    [
+        {
+          "tag": "forge:ores/lead"
+        },
+        {
+          "tag": "forge:ingots/lead"
+        },
+        {
+          "tag": "forge:dusts/lead"
+        }
+    ]
+  ],
+  "result": {
+    "tag": "forge:ingots/lead"
+  },
+  "amount": 1
+}

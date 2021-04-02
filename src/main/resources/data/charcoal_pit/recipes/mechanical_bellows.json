@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SLW",
+    "ILR",
+    "SLW"
+  ],
+  "key": {
+    "W": {
+      "tag": "minecraft:planks"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    },
+    "S": {
+      "item": "minecraft:cobblestone"
+    },
+    "I": {
+      "tag": "forge:ingots/iron"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "charcoal_pit:mechanical_bellows"
+  }
+}

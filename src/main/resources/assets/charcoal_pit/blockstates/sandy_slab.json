@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "charcoal_pit:block/sandy_slab"
+    },
+    "type=double": {
+      "model": "charcoal_pit:block/sandy_brick"
+    },
+    "type=top": {
+      "model": "charcoal_pit:block/sandy_slab",
+      "x": 180,
+      "uvlock": true
+    }
+  }
+}

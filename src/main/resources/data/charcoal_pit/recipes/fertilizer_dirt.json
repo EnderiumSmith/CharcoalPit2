@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:dirt"
+    },
+    {
+      "tag": "forge:dusts/ash"
+    },
+    {
+      "tag": "forge:dusts/ash"
+    },
+    {
+      "tag": "forge:dusts/ash"
+    },
+    {
+      "tag": "forge:dusts/ash"
+    }
+  ],
+  "result": {
+    "item": "charcoal_pit:fertilizer",
+    "count": 2
+  }
+}

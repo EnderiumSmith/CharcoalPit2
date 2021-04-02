@@ -1,0 +1,24 @@
+{
+  "conditions": [
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "tag": "charcoal_pit:straw_hoes"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:match_tool",
+                "predicate": {
+                  "enchantments": [
+                    {
+                      "enchantment": "minecraft:silk_touch"
+                    }
+                  		  ]
+                	     }
+              	      }
+            }
+          ],
+  "strawItem":"charcoal_pit:straw"
+}

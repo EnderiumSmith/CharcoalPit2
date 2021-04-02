@@ -1,0 +1,36 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+             	"value":{
+                	"tag": "forge:ingots/copper",
+                	"type": "forge:tag_empty"
+                },
+                "type":"forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          " X ",
+          "XCX",
+          " X "
+        ],
+        "key": {
+          "X": {
+            "item": "charcoal_pit:sandy_brick_item"
+          },
+          "C": {
+            "tag": "forge:ingots/copper"
+          }
+        },
+        "result": {
+          "item": "charcoal_pit:sandy_tuyere"
+        }
+      }
+    }
+  ]
+}
+

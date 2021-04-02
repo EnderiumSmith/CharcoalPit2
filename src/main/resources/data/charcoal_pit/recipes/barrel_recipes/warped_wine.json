@@ -1,0 +1,17 @@
+{
+  "type": "charcoal_pit:barrel",
+  "item_in":{
+  	"item":"minecraft:warped_fungus"
+  },
+  "fluid_in":{
+  	"fluid":"minecraft:water",
+  	"amount": 250
+  },
+  "fluid_out":{
+  	"fluid":"charcoal_pit:alcohol_still",
+  	"amount": 250,
+  	"nbt":"{CustomPotionColor:296401,Potion:\"charcoal_pit:warped_wine\"}"
+  },
+  "flags": 1,
+  "time": 48000
+}

@@ -1,0 +1,1 @@
+Special code was used to apply fortune to the quality stat in loot table and only works for charcoal pits/coke ovens. the +x/-x quality makes the progress linear. +x/null makes it logarithmic. formula is (w+x*y)/100 where w is the weight of the charcoal/coke, x the fortune level and y the quality multiplier. set x to 3 and solve for y at the target %.

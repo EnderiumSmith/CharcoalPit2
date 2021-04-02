@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hot=true": {
+      "model": "charcoal_pit:block/bloom_hot"
+    },
+    "hot=false": {
+      "model": "charcoal_pit:block/bloom_cool"
+    }
+  }
+}

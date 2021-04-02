@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "charcoal_pit:block/sandy_brick",
+    "top": "charcoal_pit:block/sandy_brick",
+    "side": "charcoal_pit:block/sandy_brick"
+  }
+}

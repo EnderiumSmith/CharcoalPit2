@@ -1,0 +1,35 @@
+{
+  "parent": "charcoal_pit:charcoal_pit/brick",
+  "display": {
+    "icon": {
+      "item": "charcoal_pit:coke"
+    },
+    "title": {
+      "translate": "advancements.charcoal_pit.coke.title"
+    },
+    "description": {
+      "translate": "advancements.charcoal_pit.coke.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "item1": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:coke"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "item1"
+    ]
+  ]
+}

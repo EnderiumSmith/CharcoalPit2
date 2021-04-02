@@ -1,0 +1,20 @@
+{
+  "type": "charcoal_pit:orekiln",
+  "ingredients": [
+    [
+        {
+          "tag": "forge:ores/bismuth"
+        },
+        {
+          "tag": "forge:ingots/bismuth"
+        },
+        {
+          "tag": "forge:dusts/bismuth"
+        }
+    ]
+  ],
+  "result": {
+    "tag": "forge:ingots/bismuth"
+  },
+  "amount": 1
+}

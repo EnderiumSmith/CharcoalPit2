@@ -1,0 +1,8 @@
+{
+  "type": "charcoal_pit:pottery",
+  "ingredient": {
+    "item": "minecraft:clay"
+  },
+  "result": "minecraft:terracotta",
+  "experience": 0.35
+}

@@ -1,0 +1,8 @@
+{
+  "type": "charcoal_pit:pottery",
+  "ingredient": {
+    "item": "charcoal_pit:unfired_sandy_brick"
+  },
+  "result": "charcoal_pit:sandy_brick_item",
+  "experience": 0.3
+}

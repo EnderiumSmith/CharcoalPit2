@@ -1,0 +1,8 @@
+{
+  "type": "charcoal_pit:pottery",
+  "ingredient": {
+    "item": "minecraft:pink_terracotta"
+  },
+  "result": "minecraft:pink_glazed_terracotta",
+  "experience": 0.35
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "charcoal_pit:log_pile"
+    }
+  ],
+  "result": {
+    "item": "minecraft:oak_log",
+    "count": 9
+  }
+}

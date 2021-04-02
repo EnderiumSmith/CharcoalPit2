@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "charcoal_pit:tiny_coke"
+    },
+    {
+      "item": "charcoal_pit:tiny_coke"
+    }
+  ],
+  "result": {
+    "item": "charcoal_pit:coke"
+  }
+}

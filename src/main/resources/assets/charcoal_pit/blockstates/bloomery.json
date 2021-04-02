@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "stage=1": {
+      "model": "charcoal_pit:block/bloomery_pile1"
+    },
+    "stage=2": {
+      "model": "charcoal_pit:block/bloomery_pile2"
+    },
+    "stage=3": {
+      "model": "charcoal_pit:block/bloomery_pile3"
+    },
+    "stage=4": {
+      "model": "charcoal_pit:block/bloomery_pile4"
+    },
+    "stage=5": {
+      "model": "charcoal_pit:block/bloomery_pile5"
+    },
+    "stage=6": {
+      "model": "charcoal_pit:block/bloomery_pile6"
+    },
+    "stage=7": {
+      "model": "charcoal_pit:block/bloomery_pile7"
+    },
+    "stage=8": {
+      "model": "charcoal_pit:block/bloomery_pile8"
+    },
+    "stage=9": {
+      "model": "charcoal_pit:block/active_bloomery"
+    },
+    "stage=10": {
+      "model": "charcoal_pit:block/bloom_hot"
+    },
+    "stage=11": {
+      "model": "charcoal_pit:block/bloom_hot"
+    },
+    "stage=12": {
+      "model": "charcoal_pit:block/bloom_cool"
+    }
+  }
+}

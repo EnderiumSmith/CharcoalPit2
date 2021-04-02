@@ -1,0 +1,43 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+             	"values":[
+             	{
+             		"value":{
+                		"tag": "forge:ingots/nickel",
+                		"type": "forge:tag_empty"
+                	},
+                	"type":"forge:not"
+                },
+                {
+                	"value":{
+                		"tag": "forge:ores/nickel",
+                		"type": "forge:tag_empty"
+                	},
+                	"type":"forge:not"
+                }
+                ],
+                "type":"forge:and"
+        }
+      ],
+      "recipe": {
+  	"type": "charcoal_pit:bloomery",
+  	"input": {
+    		"tag": "forge:ores/nickel"
+  	},
+  	"output": {
+    		"tag": "forge:ingots/nickel"
+  	},
+  	"fail": {
+    		"item": "charcoal_pit:bloom_nickel_fail"
+  	},
+  	"cool": {
+    		"item": "charcoal_pit:bloom_nickel_cool"
+  	}
+      }
+    }
+  ]
+}

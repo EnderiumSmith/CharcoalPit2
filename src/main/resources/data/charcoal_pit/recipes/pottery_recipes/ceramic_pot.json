@@ -1,0 +1,8 @@
+{
+  "type": "charcoal_pit:pottery",
+  "ingredient": {
+    "item": "charcoal_pit:clay_pot"
+  },
+  "result": "charcoal_pit:ceramic_pot",
+  "experience": 1
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "#B#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:nether_brick"
+    },
+    "B": {
+      "item": "minecraft:bucket"
+    }
+  },
+  "result": {
+    "item": "charcoal_pit:nether_collector"
+  }
+}

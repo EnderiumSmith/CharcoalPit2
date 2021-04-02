@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "charcoal_pit:sandy_brick"
+    }
+  },
+  "result": {
+    "item": "charcoal_pit:sandy_stair",
+    "count": 4
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "charcoal_pit:pottery",
+  "ingredient": {
+    "item": "charcoal_pit:unfired_brick"
+  },
+  "result": "minecraft:brick",
+  "experience": 0.3
+}

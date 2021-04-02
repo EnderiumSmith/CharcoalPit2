@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "charcoal_pit:block/sandy_brick"
+  }
+}

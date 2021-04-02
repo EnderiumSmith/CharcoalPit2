@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "charcoal_pit:brick_tuyere",
+    "charcoal_pit:sandy_tuyere",
+    "charcoal_pit:nether_tuyere",
+    "charcoal_pit:end_tuyere"
+  ]
+}

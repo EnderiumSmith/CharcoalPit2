@@ -1,0 +1,78 @@
+{
+  "parent": "charcoal_pit:charcoal_pit/copper",
+  "display": {
+    "icon": {
+      "item": "charcoal_pit:bellows"
+    },
+    "title": {
+      "translate": "advancements.charcoal_pit.bloomery.title"
+    },
+    "description": {
+      "translate": "advancements.charcoal_pit.bloomery.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "item1": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:brick_tuyere"
+          }
+        ]
+      }
+    },
+    "item2": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:sandy_tuyere"
+          }
+        ]
+      }
+    },
+    "item3": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:nether_tuyere"
+          }
+        ]
+      }
+    },
+    "item4": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:end_tuyere"
+          }
+        ]
+      }
+    },
+    "item5": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:bellows"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "item1", "item2", "item3", "item4"
+    ],
+    [ 
+      "item5" 
+    ]
+  ]
+}

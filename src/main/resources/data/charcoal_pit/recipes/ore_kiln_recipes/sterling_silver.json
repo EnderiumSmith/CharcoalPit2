@@ -1,0 +1,53 @@
+{
+  "type": "charcoal_pit:orekiln",
+  "ingredients": [
+    [
+        {
+          "tag": "forge:ores/copper"
+        },
+        {
+          "tag": "forge:ingots/copper"
+        },
+        {
+          "tag": "forge:dusts/copper"
+        }
+    ],
+    [
+        {
+          "tag": "forge:ores/silver"
+        },
+        {
+          "tag": "forge:ingots/silver"
+        },
+        {
+          "tag": "forge:dusts/silver"
+        }
+    ],
+    [
+        {
+          "tag": "forge:ores/silver"
+        },
+        {
+          "tag": "forge:ingots/silver"
+        },
+        {
+          "tag": "forge:dusts/silver"
+        }
+    ],
+    [
+        {
+          "tag": "forge:ores/silver"
+        },
+        {
+          "tag": "forge:ingots/silver"
+        },
+        {
+          "tag": "forge:dusts/silver"
+        }
+    ]
+  ],
+  "result": {
+    "tag": "forge:ingots/sterling_silver"
+  },
+  "amount": 4
+}

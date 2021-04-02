@@ -1,0 +1,195 @@
+{
+  "parent": "charcoal_pit:charcoal_pit/alcohol",
+  "display": {
+    "icon": {
+      "item": "charcoal_pit:alcohol_bottle",
+      "nbt":"{CustomPotionColor:10096298,Potion:\"charcoal_pit:chorus_cider\"}"
+    },
+    "title": {
+      "translate": "advancements.charcoal_pit.wine_conosur.title"
+    },
+    "description": {
+      "translate": "advancements.charcoal_pit.wine_conosur.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 100
+  },
+  "criteria": {
+    "item1": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:alcohol_bottle",
+      		"nbt":"{CustomPotionColor:15007744,Potion:\"charcoal_pit:cider\"}"
+          }
+        ]
+      }
+    },
+    "item2": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:alcohol_bottle",
+      		"nbt":"{CustomPotionColor:14398476,Potion:\"charcoal_pit:golden_cider\"}"
+          }
+        ]
+      }
+    },
+    "item3": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:alcohol_bottle",
+      		"nbt":"{CustomPotionColor:10096298,Potion:\"charcoal_pit:chorus_cider\"}"
+          }
+        ]
+      }
+    },
+    "item4": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:alcohol_bottle",
+      		"nbt":"{CustomPotionColor:15129254,Potion:\"charcoal_pit:vodka\"}"
+          }
+        ]
+      }
+    },
+    "item5": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:alcohol_bottle",
+      		"nbt":"{CustomPotionColor:8650752,Potion:\"charcoal_pit:beetroot_beer\"}"
+          }
+        ]
+      }
+    },
+    "item6": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:alcohol_bottle",
+      		"nbt":"{CustomPotionColor:16624200,Potion:\"charcoal_pit:beer\"}"
+          }
+        ]
+      }
+    },
+    "item7": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:alcohol_bottle",
+      		"nbt":"{CustomPotionColor:411404,Potion:\"charcoal_pit:sweetberry_wine\"}"
+          }
+        ]
+      }
+    },
+    "item8": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:alcohol_bottle",
+      		"nbt":"{CustomPotionColor:296401,Potion:\"charcoal_pit:warped_wine\"}"
+          }
+        ]
+      }
+    },
+    "item9": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:alcohol_bottle",
+      		"nbt":"{CustomPotionColor:16433669,Potion:\"charcoal_pit:mead\"}"
+          }
+        ]
+      }
+    },
+    "item10": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:alcohol_bottle",
+      		"nbt":"{CustomPotionColor:6619169,Potion:\"charcoal_pit:rum\"}"
+          }
+        ]
+      }
+    },
+    "item11": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:alcohol_bottle",
+      		"nbt":"{CustomPotionColor:16347910,Potion:\"charcoal_pit:honey_dewois\"}"
+          }
+        ]
+      }
+    },
+    "item12": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:alcohol_bottle",
+      		"nbt":"{CustomPotionColor:10855682,Potion:\"charcoal_pit:spider_spirit\"}"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "item1"
+    ],
+    [ 
+      "item2" 
+    ],
+    [ 
+      "item3" 
+    ],
+    [ 
+      "item4" 
+    ],
+    [ 
+      "item5" 
+    ],
+    [ 
+      "item6" 
+    ],
+    [ 
+      "item7" 
+    ],
+    [ 
+      "item8" 
+    ],
+    [ 
+      "item9" 
+    ],
+    [ 
+      "item10" 
+    ],
+    [ 
+      "item11" 
+    ],
+    [ 
+      "item12" 
+    ]
+    
+  ]
+}

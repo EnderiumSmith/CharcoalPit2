@@ -1,0 +1,35 @@
+{
+  "parent": "charcoal_pit:charcoal_pit/root",
+  "display": {
+    "icon": {
+      "item": "charcoal_pit:barrel"
+    },
+    "title": {
+      "translate": "advancements.charcoal_pit.barrel.title"
+    },
+    "description": {
+      "translate": "advancements.charcoal_pit.barrel.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "item1": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charcoal_pit:barrel"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "item1"
+    ]
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "layers=1": {
+      "model": "charcoal_pit:block/bloomery_pile1"
+    },
+    "layers=2": {
+      "model": "charcoal_pit:block/bloomery_pile2"
+    },
+    "layers=3": {
+      "model": "charcoal_pit:block/bloomery_pile3"
+    },
+    "layers=4": {
+      "model": "charcoal_pit:block/bloomery_pile4"
+    },
+    "layers=5": {
+      "model": "charcoal_pit:block/bloomery_pile5"
+    },
+    "layers=6": {
+      "model": "charcoal_pit:block/bloomery_pile6"
+    },
+    "layers=7": {
+      "model": "charcoal_pit:block/bloomery_pile7"
+    },
+    "layers=8": {
+      "model": "charcoal_pit:block/bloomery_pile8"
+    }
+  }
+}

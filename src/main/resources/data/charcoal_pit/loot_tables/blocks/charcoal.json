@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 9,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 50,
+	  "quality": 10,
+          "name": "minecraft:charcoal"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 50,
+	  "quality": -10,
+          "name": "charcoal_pit:ash"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "parent": "charcoal_pit:charcoal_pit/wine_conosur",
+  "display": {
+    "icon": {
+      "item": "charcoal_pit:alcohol_bottle",
+      		"nbt":"{CustomPotionColor:15129254,Potion:\"charcoal_pit:vodka\"}"
+    },
+    "title": {
+      "translate": "advancements.charcoal_pit.all_effects.title"
+    },
+    "description": {
+      "translate": "advancements.charcoal_pit.all_effects.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "rewards": {
+    "experience": 200
+  },
+  "criteria": {
+    "all_effects": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": {
+        "effects": {
+          "minecraft:speed": {},
+          "minecraft:slowness": {},
+          "minecraft:strength": {},
+          "minecraft:jump_boost": {},
+          "minecraft:regeneration": {},
+          "minecraft:weakness": {},
+          "minecraft:poison": {},
+          "minecraft:haste": {},
+          "minecraft:mining_fatigue": {},
+          "minecraft:levitation": {},
+          "minecraft:absorption": {},
+          "minecraft:nausea": {},
+          "minecraft:resistance": {},
+          "minecraft:slow_falling": {},
+          "minecraft:blindness": {},
+          "charcoal_pit:poison_resistance": {},
+          "charcoal_pit:wither_resistance": {},
+          "charcoal_pit:drunk": {}
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "all_effects"
+    ]
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "IBR",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:cobblestone"
+    },
+    "I": {
+      "tag": "forge:ingots/iron"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "B": {
+      "item": "charcoal_pit:bellows"
+    }
+  },
+  "result": {
+    "item": "charcoal_pit:mechanical_bellows"
+  }
+}

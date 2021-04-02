@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "charcoal_pit:ceramic_pot",
+    "charcoal_pit:white_pot",
+    "charcoal_pit:orange_pot",
+    "charcoal_pit:magenta_pot",
+    "charcoal_pit:light_blue_pot",
+    "charcoal_pit:yellow_pot",
+    "charcoal_pit:lime_pot",
+    "charcoal_pit:pink_pot",
+    "charcoal_pit:gray_pot",
+    "charcoal_pit:light_gray_pot",
+    "charcoal_pit:cyan_pot",
+    "charcoal_pit:purple_pot",
+    "charcoal_pit:blue_pot",
+    "charcoal_pit:brown_pot",
+    "charcoal_pit:green_pot",
+    "charcoal_pit:red_pot",
+    "charcoal_pit:black_pot"
+  ]
+}

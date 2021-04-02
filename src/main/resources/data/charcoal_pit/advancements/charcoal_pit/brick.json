@@ -1,0 +1,55 @@
+{
+  "parent": "charcoal_pit:charcoal_pit/straw",
+  "display": {
+    "icon": {
+      "item": "charcoal_pit:sandy_brick_item"
+    },
+    "title": {
+      "translate": "advancements.charcoal_pit.brick.title"
+    },
+    "description": {
+      "translate": "advancements.charcoal_pit.brick.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "item1": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:brick"
+          }
+        ]
+      }
+    },
+    "item2": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+	  {	
+            "item": "charcoal_pit:sandy_brick_item"
+          }
+        ]
+      }
+    },
+    "item3": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+	  {
+            "item": "minecraft:nether_brick"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "item1", "item2", "item3"
+    ]
+  ]
+}

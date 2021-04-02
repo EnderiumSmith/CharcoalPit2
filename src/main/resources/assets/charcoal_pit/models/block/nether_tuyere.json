@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "minecraft:block/nether_bricks",
+    "down": "minecraft:block/nether_bricks",
+    "up": "minecraft:block/nether_bricks",
+    "east": "charcoal_pit:block/nether_tuyere",
+    "west": "charcoal_pit:block/nether_tuyere",
+    "north": "charcoal_pit:block/nether_tuyere",
+    "south": "charcoal_pit:block/nether_tuyere"
+  }
+}

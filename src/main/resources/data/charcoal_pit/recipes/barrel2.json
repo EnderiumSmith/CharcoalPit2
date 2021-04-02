@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "charcoal_pit:barrel"
+    }
+  ],
+  "result": {
+    "item": "charcoal_pit:barrel"
+  }
+}

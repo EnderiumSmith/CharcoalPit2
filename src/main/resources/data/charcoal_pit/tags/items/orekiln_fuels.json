@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:coal",
+    "minecraft:charcoal",
+    "#forge:coal_coke",
+    "charcoal_pit:tiny_coke"
+  ]
+}

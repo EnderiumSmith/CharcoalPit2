@@ -1,0 +1,20 @@
+{
+  "type": "charcoal_pit:orekiln",
+  "ingredients": [
+    [
+        {
+          "tag": "forge:ores/zinc"
+        },
+        {
+          "tag": "forge:ingots/zinc"
+        },
+        {
+          "tag": "forge:dusts/zinc"
+        }
+    ]
+  ],
+  "result": {
+    "tag": "forge:ingots/zinc"
+  },
+  "amount": 1
+}

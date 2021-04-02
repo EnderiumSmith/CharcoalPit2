@@ -1,0 +1,53 @@
+{
+  "type": "charcoal_pit:orekiln",
+  "ingredients": [
+    [
+        {
+          "tag": "forge:ores/copper"
+        },
+        {
+          "tag": "forge:ingots/copper"
+        },
+        {
+          "tag": "forge:dusts/copper"
+        }
+    ],
+    [
+        {
+          "tag": "forge:ores/copper"
+        },
+        {
+          "tag": "forge:ingots/copper"
+        },
+        {
+          "tag": "forge:dusts/copper"
+        }
+    ],
+    [
+        {
+          "tag": "forge:ores/bismuth"
+        },
+        {
+          "tag": "forge:ingots/bismuth"
+        },
+        {
+          "tag": "forge:dusts/bismuth"
+        }
+    ],
+    [
+        {
+          "tag": "forge:ores/zinc"
+        },
+        {
+          "tag": "forge:ingots/zinc"
+        },
+        {
+          "tag": "forge:dusts/zinc"
+        }
+    ]
+  ],
+  "result": {
+    "tag": "forge:ingots/bismuth_bronze"
+  },
+  "amount": 4
+}

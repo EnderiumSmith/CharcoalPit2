@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "S S",
+    "LLL"
+  ],
+  "key": {
+    "L": {
+      "tag": "minecraft:logs_that_burn"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "minecraft:campfire"
+  }
+}

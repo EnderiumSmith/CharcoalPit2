@@ -1,0 +1,17 @@
+{
+  "type": "charcoal_pit:barrel",
+  "item_in":{
+  	"item":"minecraft:sweet_berries"
+  },
+  "fluid_in":{
+  	"fluid":"minecraft:water",
+  	"amount": 250
+  },
+  "fluid_out":{
+  	"fluid":"charcoal_pit:alcohol_still",
+  	"amount": 250,
+  	"nbt":"{CustomPotionColor:411404,Potion:\"charcoal_pit:sweetberry_wine\"}"
+  },
+  "flags": 1,
+  "time": 48000
+}

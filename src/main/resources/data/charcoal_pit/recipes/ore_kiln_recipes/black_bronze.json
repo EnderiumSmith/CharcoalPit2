@@ -1,0 +1,53 @@
+{
+  "type": "charcoal_pit:orekiln",
+  "ingredients": [
+    [
+        {
+          "tag": "forge:ores/copper"
+        },
+        {
+          "tag": "forge:ingots/copper"
+        },
+        {
+          "tag": "forge:dusts/copper"
+        }
+    ],
+    [
+        {
+          "tag": "forge:ores/copper"
+        },
+        {
+          "tag": "forge:ingots/copper"
+        },
+        {
+          "tag": "forge:dusts/copper"
+        }
+    ],
+    [
+        {
+          "tag": "forge:ores/silver"
+        },
+        {
+          "tag": "forge:ingots/silver"
+        },
+        {
+          "tag": "forge:dusts/silver"
+        }
+    ],
+    [
+        {
+          "tag": "forge:ores/gold"
+        },
+        {
+          "tag": "forge:ingots/gold"
+        },
+        {
+          "tag": "forge:dusts/gold"
+        }
+    ]
+  ],
+  "result": {
+    "tag": "forge:ingots/black_bronze"
+  },
+  "amount": 4
+}

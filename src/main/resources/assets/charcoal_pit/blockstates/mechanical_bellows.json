@@ -1,0 +1,50 @@
+{
+  "variants": {
+    "facing=north,push=false": {
+      "model": "charcoal_pit:block/mechanical_bellows"
+    },
+    "facing=south,push=false": {
+      "model": "charcoal_pit:block/mechanical_bellows",
+      "y": 180
+    },
+    "facing=east,push=false": {
+      "model": "charcoal_pit:block/mechanical_bellows",
+      "y": 90
+    },
+    "facing=west,push=false": {
+      "model": "charcoal_pit:block/mechanical_bellows",
+      "y": 270
+    },
+    "facing=up,push=false": {
+      "model": "charcoal_pit:block/mechanical_bellows",
+      "x": 270
+    },
+    "facing=down,push=false": {
+      "model": "charcoal_pit:block/mechanical_bellows",
+      "x": 90
+    },
+    "facing=north,push=true": {
+      "model": "charcoal_pit:block/mechanical_bellows_push"
+    },
+    "facing=south,push=true": {
+      "model": "charcoal_pit:block/mechanical_bellows_push",
+      "y": 180
+    },
+    "facing=east,push=true": {
+      "model": "charcoal_pit:block/mechanical_bellows_push",
+      "y": 90
+    },
+    "facing=west,push=true": {
+      "model": "charcoal_pit:block/mechanical_bellows_push",
+      "y": 270
+    },
+    "facing=up,push=true": {
+      "model": "charcoal_pit:block/mechanical_bellows_push",
+      "x": 270
+    },
+    "facing=down,push=true": {
+      "model": "charcoal_pit:block/mechanical_bellows_push",
+      "x": 90
+    }
+  }
+}

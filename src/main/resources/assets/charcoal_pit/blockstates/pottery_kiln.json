@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "kiln_type=active": {
+      "model": "charcoal_pit:block/kiln_active"
+    },
+    "kiln_type=complete": {
+      "model": "charcoal_pit:block/kiln_complete"
+    },
+    "kiln_type=empty": {
+      "model": "charcoal_pit:block/kiln_empty"
+    },
+    "kiln_type=thatch": {
+      "model": "charcoal_pit:block/kiln_thatch"
+    },
+    "kiln_type=wood": {
+      "model": "charcoal_pit:block/kiln_wood"
+    }
+  }
+}

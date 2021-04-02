@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "charcoal_pit:sandy_brick_item"
+    }
+  },
+  "result": {
+    "item": "charcoal_pit:sandy_brick"
+  }
+}

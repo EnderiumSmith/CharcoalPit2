@@ -1,0 +1,6 @@
+{
+    "parent": "charcoal_pit:block/kiln_slab_slab",
+    "textures": {
+        "side": "charcoal_pit:block/ash_pile"
+    }
+}

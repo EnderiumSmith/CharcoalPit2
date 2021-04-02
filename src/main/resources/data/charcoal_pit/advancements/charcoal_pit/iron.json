@@ -1,0 +1,35 @@
+{
+  "parent": "charcoal_pit:charcoal_pit/bloomery",
+  "display": {
+    "icon": {
+      "item": "minecraft:iron_ingot"
+    },
+    "title": {
+      "translate": "advancements.charcoal_pit.iron.title"
+    },
+    "description": {
+      "translate": "advancements.charcoal_pit.iron.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "item1": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:iron_ingot"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "item1"
+    ]
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#C#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:end_stone_bricks"
+    },
+    "C": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "charcoal_pit:end_tuyere"
+  }
+}

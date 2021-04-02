@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "charcoal_pit:block/sandy_brick",
+    "top": "charcoal_pit:block/sandy_brick",
+    "side": "charcoal_pit:block/sandy_brick"
+  }
+}

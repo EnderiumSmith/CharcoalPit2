@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "charcoal_pit:ash_block"
+    }
+  ],
+  "result": {
+    "item": "charcoal_pit:ash",
+    "count": 9
+  }
+}

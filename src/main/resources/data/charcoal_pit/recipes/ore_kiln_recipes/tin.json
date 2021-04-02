@@ -1,0 +1,20 @@
+{
+  "type": "charcoal_pit:orekiln",
+  "ingredients": [
+    [
+        {
+          "tag": "forge:ores/tin"
+        },
+        {
+          "tag": "forge:ingots/tin"
+        },
+        {
+          "tag": "forge:dusts/tin"
+        }
+    ]
+  ],
+  "result": {
+    "tag": "forge:ingots/tin"
+  },
+  "amount": 1
+}

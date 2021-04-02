@@ -1,0 +1,15 @@
+{
+  "type": "charcoal_pit:barrel",
+  "item_in":{
+  	"item":"charcoal_pit:vinegar_bottle"
+  },
+  "fluid_in":{
+  	"tag":"forge:milk",
+  	"amount": 4000
+  },
+  "item_out":{
+  	"item":"charcoal_pit:cheese"
+  },
+  "out_amount":4,
+  "time": 24000
+}

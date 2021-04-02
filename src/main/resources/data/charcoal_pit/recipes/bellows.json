@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#L#",
+    "#L#",
+    "#L#"
+  ],
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    }
+  },
+  "result": {
+    "item": "charcoal_pit:bellows"
+  }
+}
