@@ -1,6 +1,7 @@
 {
   "replace": false,
   "entries": [
-    "charcoal_pit:straw_from_grass"
+    "charcoal_pit:straw_from_grass",
+    "charcoal_pit:kernels_from_grass"
   ]
 }

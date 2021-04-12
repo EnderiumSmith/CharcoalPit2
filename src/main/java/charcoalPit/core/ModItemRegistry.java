@@ -6,10 +6,13 @@ import charcoalPit.item.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.item.*;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import org.lwjgl.system.CallbackI;
 
 @EventBusSubscriber(modid=CharcoalPit.MODID, bus=Bus.MOD)
 public class ModItemRegistry {
@@ -18,6 +21,12 @@ public class ModItemRegistry {
 		@Override
 		public ItemStack createIcon() {
 			return new ItemStack(Items.CHARCOAL);
+		}
+	};
+	public static ItemGroup CHARCOAL_PIT_FOODS=new ItemGroup("charcoal_pit_foods") {
+		@Override
+		public ItemStack createIcon() {
+			return new ItemStack(ModItemRegistry.Kebabs);
 		}
 	};
 
@@ -60,9 +69,30 @@ public class ModItemRegistry {
 	public static ItemAlcoholBottle AlcoholBottle=new ItemAlcoholBottle();
 	public static BucketItem VinegarBucket=new BucketItem(()->ModFluidRegistry.VinegarStill, new Item.Properties().group(CHARCOAL_PIT).maxStackSize(1).containerItem(Items.BUCKET));
 	public static Item VinegarBottle=new Item(new Item.Properties().group(CHARCOAL_PIT).maxStackSize(16).containerItem(Items.GLASS_BOTTLE));
-	public static Item Cheese=new Item(new Item.Properties().group(CHARCOAL_PIT).food(new Food.Builder().hunger(5).saturation(1.2F).build()));
+	public static Item Cheese=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(5).saturation(1.2F).build()));
 	public static Item TinyCoke=buildItem(CHARCOAL_PIT,1600);
 	public static BlockItem MechanicalBeellows=buildBlockItem(ModBlockRegistry.MechanicalBellows);
+	public static ItemKebabs Kebabs=new ItemKebabs(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(5).saturation(1.6F).meat().build()).containerItem(Items.STICK));
+	public static BlockNamedItem Leek=new BlockNamedItem(ModBlockRegistry.Leeks,new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(1).saturation(0.6F).fastToEat().build()));
+	public static ItemKebabs FarfetchStew=new ItemKebabs(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(8).saturation(1.6F).meat().build()).containerItem(Items.BOWL));
+	public static ItemKebabs RabbitStew=new ItemKebabs(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(8).saturation(1.6F).meat().build()).containerItem(Items.BOWL));
+	public static ItemKebabs MooshroomStew=new ItemKebabs(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(6).saturation(1.2F).build()).containerItem(Items.BOWL));
+	public static ItemKebabs BeetStew=new ItemKebabs(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(6).saturation(1.2F).build()).containerItem(Items.BOWL));
+	public static Item Calamari=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(1).saturation(0.2F).meat().build()));
+	public static Item CookedCalamri=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(4).saturation(1.2F).meat().build()));
+	public static Item CookedEgg=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(4).saturation(1.2F).meat().build()));
+	public static BlockNamedItem CornKernels=new BlockNamedItem(ModBlockRegistry.Corn,new Item.Properties().group(CHARCOAL_PIT_FOODS));
+	public static Item Corn=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(3).saturation(1.2F).build()));
+	public static Item PopCorn=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(1).saturation(0.6F).fastToEat().build()));
+	public static ItemKebabs CornStew=new ItemKebabs(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(6).saturation(1.6F).build()).containerItem(Items.BOWL));
+	public static Item Sushi=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(5).saturation(1.2F).meat().build()));
+	public static Item SushiCooked=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(6).saturation(1.6F).meat().build()));
+	public static Item Fugu=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(5).saturation(2.4F).meat().effect(()->new EffectInstance(Effects.POISON,1200,3),0.02F).build()));
+	public static Item Cherry=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(2).saturation(0.6F).fastToEat().build()));
+	
+	public static BlockItem AppleSapling=new BlockItem(ModBlockRegistry.AppleSapling,new Item.Properties().group(CHARCOAL_PIT_FOODS));
+	
+	public static BlockItem CherrySapling=new BlockItem(ModBlockRegistry.CherrySapling,new Item.Properties().group(CHARCOAL_PIT_FOODS));
 	
 	/*public static TallBlockItem BrickDoor=new TallBlockItem(ModBlockRegistry.BrickDoor,new Item.Properties().group(CHARCOAL_PIT)),
 			SandyDoor=new TallBlockItem(ModBlockRegistry.SandyDoor,new Item.Properties().group(CHARCOAL_PIT)),
@@ -79,14 +109,19 @@ public class ModItemRegistry {
 				Bellows.setRegistryName("bellows"),TuyereBrick.setRegistryName("brick_tuyere"),TuyereSandy.setRegistryName("sandy_tuyere"),TuyereNether.setRegistryName("nether_tuyere"),TuyereEnd.setRegistryName("end_tuyere"),
 				CopperOre.setRegistryName("copper_ore"),CopperBlock.setRegistryName("copper_block"),
 				Barrel.setRegistryName("barrel")/*,BrickDoor.setRegistryName("brick_door"),SandyDoor.setRegistryName("sandy_door"),NetherDoor.setRegistryName("nether_door"),
-				EndDoor.setRegistryName("end_door")*/,MechanicalBeellows.setRegistryName("mechanical_bellows"));
+				EndDoor.setRegistryName("end_door")*/,MechanicalBeellows.setRegistryName("mechanical_bellows"),
+				AppleSapling.setRegistryName("apple_sapling"),CherrySapling.setRegistryName("cherry_sapling"));
 		event.getRegistry().registerAll(Straw.setRegistryName("straw"), Ash.setRegistryName("ash"), Coke.setRegistryName("coke"), 
 				Aeternalis.setRegistryName("aeternalis_fuel"), Fertilizer.setRegistryName("fertilizer"), FireStarter.setRegistryName("fire_starter"),
 				CreosoteBucket.setRegistryName("creosote_bucket"),ClayPot.setRegistryName("clay_pot"),BloomCool.setRegistryName("bloom_cool"),BloomFail.setRegistryName("bloom_fail"),
 				CopperIngot.setRegistryName("copper_ingot"),CrackedPot.setRegistryName("cracked_pot"),BloomNiCool.setRegistryName("bloom_nickel_cool"),BloomNiFail.setRegistryName("bloom_nickel_fail"),
 				SandyBrickItem.setRegistryName("sandy_brick_item"),UnfireSandyBrick.setRegistryName("unfired_sandy_brick"),NetherBrickItem.setRegistryName("nether_brick_item"),
 				UnfiredBrick.setRegistryName("unfired_brick"),AlcoholBottle.setRegistryName("alcohol_bottle"),VinegarBucket.setRegistryName("vinegar_bucket"),
-				VinegarBottle.setRegistryName("vinegar_bottle"),Cheese.setRegistryName("cheese"),TinyCoke.setRegistryName("tiny_coke"));
+				VinegarBottle.setRegistryName("vinegar_bottle"),Cheese.setRegistryName("cheese"),TinyCoke.setRegistryName("tiny_coke"),Kebabs.setRegistryName("kebabs"),
+				Leek.setRegistryName("leek"),FarfetchStew.setRegistryName("farfetch_stew"),RabbitStew.setRegistryName("rabbit_stew"),MooshroomStew.setRegistryName("mooshroom_stew"),
+				BeetStew.setRegistryName("beet_stew"),Calamari.setRegistryName("calamari"),CookedCalamri.setRegistryName("cooked_calamari"),CookedEgg.setRegistryName("cooked_egg"),
+				Corn.setRegistryName("corn"),CornKernels.setRegistryName("corn_kernels"),PopCorn.setRegistryName("popcorn"),CornStew.setRegistryName("corn_stew"),
+				Sushi.setRegistryName("sushi"),SushiCooked.setRegistryName("cooked_sushi"),Fugu.setRegistryName("fugu"),Cherry.setRegistryName("cherry"));
 		event.getRegistry().registerAll(CeramicPot.setRegistryName("ceramic_pot"),YellowPot.setRegistryName("yellow_pot"),WhitePot.setRegistryName("white_pot"),
 				RedPot.setRegistryName("red_pot"),PurplePot.setRegistryName("purple_pot"),PinkPot.setRegistryName("pink_pot"),OrangePot.setRegistryName("orange_pot"),
 				MagentaPot.setRegistryName("magenta_pot"),LimePot.setRegistryName("lime_pot"),LightGrayPot.setRegistryName("light_gray_pot"),

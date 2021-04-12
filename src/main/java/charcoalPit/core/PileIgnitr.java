@@ -174,6 +174,12 @@ public class PileIgnitr {
 		if(event.getName().toString().equals("minecraft:chests/end_city_treasure")){
 			event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(CharcoalPit.MODID, "end_aeternalis"))).build());
 		}
+		if(event.getName().toString().equals("minecraft:entities/chicken")){
+			event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(CharcoalPit.MODID,"leeks"))).build());
+		}
+		if(event.getName().toString().equals("minecraft:entities/squid")){
+			event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(CharcoalPit.MODID,"calamari"))).build());
+		}
 	}
 	@SubscribeEvent
 	public static void savePotInventory(ItemCraftedEvent event) {

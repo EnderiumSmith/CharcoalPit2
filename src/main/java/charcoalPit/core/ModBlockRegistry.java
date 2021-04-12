@@ -6,6 +6,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.AbstractBlock.Properties;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.item.Items;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -57,6 +58,16 @@ public class ModBlockRegistry {
 	public static BlockBarrel Barrel=new BlockBarrel();
 	public static BlockMechanicalBellows MechanicalBellows=new BlockMechanicalBellows();
 	
+	public static BlockLeeks Leeks=new BlockLeeks(Properties.from(Blocks.WHEAT));
+	public static BlockCorn Corn=new BlockCorn(Properties.from(Blocks.WHEAT));
+	
+	public static BlockFruitLeaves AppleLeaves=new BlockFruitLeaves(Properties.from(Blocks.OAK_LEAVES), Items.APPLE, 0.333F);
+	public static BlockFruitLeaves CherryLeaves=new BlockFruitLeaves(Properties.from(Blocks.BIRCH_LEAVES), ModItemRegistry.Cherry, 0.666F);
+	
+	public static SaplingBlock AppleSapling=new SaplingBlock(new ModFeatures.AppleTree(),AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT));
+	
+	public static SaplingBlock CherrySapling=new SaplingBlock(new ModFeatures.CherryTree(), AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT));
+	
 	/*public static DoorBlock BrickDoor=new DoorBlock(AbstractBlock.Properties.from(Blocks.IRON_DOOR)),
 			SandyDoor=new DoorBlock(Properties.from(Blocks.IRON_DOOR)),
 			NetherDoor=new DoorBlock(Properties.from(Blocks.IRON_DOOR)),
@@ -76,7 +87,9 @@ public class ModBlockRegistry {
 				TuyereBrick.setRegistryName("brick_tuyere"),TuyereSandy.setRegistryName("sandy_tuyere"),TuyereNether.setRegistryName("nether_tuyere"),TuyereEnd.setRegistryName("end_tuyere"),
 				CopperOre.setRegistryName("copper_ore"),CopperBlock.setRegistryName("copper_block"),Bloomery.setRegistryName("bloomery"),
 				Barrel.setRegistryName("barrel")/*,BrickDoor.setRegistryName("brick_door"),SandyDoor.setRegistryName("sandy_door"),NetherDoor.setRegistryName("nether_door"),
-				EndDoor.setRegistryName("end_door")*/,MechanicalBellows.setRegistryName("mechanical_bellows"));
+				EndDoor.setRegistryName("end_door")*/,MechanicalBellows.setRegistryName("mechanical_bellows"),Leeks.setRegistryName("leeks"),Corn.setRegistryName("corn"),
+				AppleLeaves.setRegistryName("apple_leaves"),AppleSapling.setRegistryName("apple_sapling"),CherrySapling.setRegistryName("cherry_sapling"),
+				CherryLeaves.setRegistryName("cherry_leaves"));
 		event.getRegistry().registerAll(CeramicPot.setRegistryName("ceramic_pot"),YellowPot.setRegistryName("yellow_pot"),WhitePot.setRegistryName("white_pot"),
 				RedPot.setRegistryName("red_pot"),PurplePot.setRegistryName("purple_pot"),PinkPot.setRegistryName("pink_pot"),OrangePot.setRegistryName("orange_pot"),
 				MagentaPot.setRegistryName("magenta_pot"),LimePot.setRegistryName("lime_pot"),LightGrayPot.setRegistryName("light_gray_pot"),

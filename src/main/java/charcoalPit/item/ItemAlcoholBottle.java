@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 public class ItemAlcoholBottle extends PotionItem{
 
 	public ItemAlcoholBottle() {
-		super(new Item.Properties().group(ModItemRegistry.CHARCOAL_PIT).maxStackSize(16).containerItem(Items.GLASS_BOTTLE));
+		super(new Item.Properties().group(ModItemRegistry.CHARCOAL_PIT_FOODS).maxStackSize(16).containerItem(Items.GLASS_BOTTLE));
 	}
 	
 	@Override
@@ -79,7 +79,7 @@ public class ItemAlcoholBottle extends PotionItem{
 
 	@Override
 	public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
-		if(group==ModItemRegistry.CHARCOAL_PIT) {
+		if(group==ModItemRegistry.CHARCOAL_PIT_FOODS) {
 
 			if(!didInit)
 				this.initItems();
