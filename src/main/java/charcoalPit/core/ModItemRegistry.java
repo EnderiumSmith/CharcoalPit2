@@ -8,6 +8,7 @@ import net.minecraft.block.DispenserBlock;
 import net.minecraft.item.*;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -90,9 +91,11 @@ public class ModItemRegistry {
 	public static Item Fugu=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(5).saturation(2.4F).meat().effect(()->new EffectInstance(Effects.POISON,1200,3),0.02F).build()));
 	public static Item Cherry=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(2).saturation(0.6F).fastToEat().build()));
 	
-	public static BlockItem AppleSapling=new BlockItem(ModBlockRegistry.AppleSapling,new Item.Properties().group(CHARCOAL_PIT_FOODS));
+	public static BlockItem AppleSapling=new BlockItem(ModBlockRegistry.AppleSapling,new Item.Properties().group(CHARCOAL_PIT));
+	public static BlockItem CherrySapling=new BlockItem(ModBlockRegistry.CherrySapling,new Item.Properties().group(CHARCOAL_PIT));
 	
-	public static BlockItem CherrySapling=new BlockItem(ModBlockRegistry.CherrySapling,new Item.Properties().group(CHARCOAL_PIT_FOODS));
+	public static ItemBlockLeaves AppleLeaves=new ItemBlockLeaves(ModBlockRegistry.AppleLeaves,new Item.Properties().group(CHARCOAL_PIT));
+	public static ItemBlockLeaves CherryLeaves=new ItemBlockLeaves(ModBlockRegistry.CherryLeaves,new Item.Properties().group(CHARCOAL_PIT));
 	
 	/*public static TallBlockItem BrickDoor=new TallBlockItem(ModBlockRegistry.BrickDoor,new Item.Properties().group(CHARCOAL_PIT)),
 			SandyDoor=new TallBlockItem(ModBlockRegistry.SandyDoor,new Item.Properties().group(CHARCOAL_PIT)),
@@ -110,7 +113,8 @@ public class ModItemRegistry {
 				CopperOre.setRegistryName("copper_ore"),CopperBlock.setRegistryName("copper_block"),
 				Barrel.setRegistryName("barrel")/*,BrickDoor.setRegistryName("brick_door"),SandyDoor.setRegistryName("sandy_door"),NetherDoor.setRegistryName("nether_door"),
 				EndDoor.setRegistryName("end_door")*/,MechanicalBeellows.setRegistryName("mechanical_bellows"),
-				AppleSapling.setRegistryName("apple_sapling"),CherrySapling.setRegistryName("cherry_sapling"));
+				AppleSapling.setRegistryName("apple_sapling"),CherrySapling.setRegistryName("cherry_sapling"),
+				AppleLeaves.setRegistryName("apple_leaves"),CherryLeaves.setRegistryName("cherry_leaves"));
 		event.getRegistry().registerAll(Straw.setRegistryName("straw"), Ash.setRegistryName("ash"), Coke.setRegistryName("coke"), 
 				Aeternalis.setRegistryName("aeternalis_fuel"), Fertilizer.setRegistryName("fertilizer"), FireStarter.setRegistryName("fire_starter"),
 				CreosoteBucket.setRegistryName("creosote_bucket"),ClayPot.setRegistryName("clay_pot"),BloomCool.setRegistryName("bloom_cool"),BloomFail.setRegistryName("bloom_fail"),

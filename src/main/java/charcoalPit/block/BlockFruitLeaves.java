@@ -1,5 +1,6 @@
 package charcoalPit.block;
 
+import charcoalPit.core.ModItemRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
@@ -8,30 +9,33 @@ import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.IItemProvider;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.EntitySelectionContext;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.items.ItemHandlerHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Random;
 
@@ -41,7 +45,7 @@ public class BlockFruitLeaves extends Block {
 	public static final BooleanProperty PERSISTENT = BlockStateProperties.PERSISTENT;
 	public static final IntegerProperty AGE=BlockStateProperties.AGE_0_7;
 	
-	public final IItemProvider fruit;
+	public IItemProvider fruit;
 	public final float tick_chance;
 	
 	public BlockFruitLeaves(Properties properties,IItemProvider fruit,float tick_rate) {
@@ -52,6 +56,16 @@ public class BlockFruitLeaves extends Block {
 	}
 	
 	@Override
+	public int getFireSpreadSpeed(BlockState state, IBlockReader world, BlockPos pos, Direction face) {
+		return 30;
+	}
+	
+	@Override
+	public int getFlammability(BlockState state, IBlockReader world, BlockPos pos, Direction face) {
+		return 60;
+	}
+	
+	@Override
 	public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
 		if(context instanceof EntitySelectionContext){
 			if(((EntitySelectionContext)context).getEntity() instanceof ItemEntity){
@@ -59,6 +73,10 @@ public class BlockFruitLeaves extends Block {
 			}
 		}
 		return super.getCollisionShape(state,worldIn,pos,context);
+	}
+	
+	public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+		return 1;
 	}
 	
 	@Override
@@ -76,7 +94,7 @@ public class BlockFruitLeaves extends Block {
 			spawnDrops(state, worldIn, pos);
 			worldIn.removeBlock(pos, false);
 		}
-		if(random.nextFloat()<tick_chance){
+		if(random.nextFloat()<tick_chance&&!state.get(PERSISTENT)){
 			int stage=state.get(AGE);
 			for(BlockPos mutable:BlockPos.Mutable.getAllInBoxMutable(pos.down(2).north(2).west(2),pos.up(2).south(2).east(2))){
 				if(worldIn.getBlockState(mutable).getBlock()==this&&!worldIn.getBlockState(mutable).get(PERSISTENT)){
@@ -101,7 +119,7 @@ public class BlockFruitLeaves extends Block {
 	
 	@Override
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-		if(state.get(AGE)==7){
+		if(state.get(AGE)==7&&!state.get(PERSISTENT)){
 			ItemHandlerHelper.giveItemToPlayer(player,new ItemStack(fruit),player.inventory.currentItem);
 			worldIn.setBlockState(pos,state.with(AGE,0),2);
 			return ActionResultType.SUCCESS;
@@ -157,7 +175,31 @@ public class BlockFruitLeaves extends Block {
 		}
 	}
 	
+	private int getAge(ItemStack item){
+		if(item.hasTag()&&item.getTag().contains("stage")){
+			return item.getTag().getInt("stage");
+		}
+		return 0;
+		
+	}
+	
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		return updateDistance(this.getDefaultState().with(PERSISTENT, true), context.getWorld(), context.getPos());
+		return updateDistance(this.getDefaultState().with(PERSISTENT, true).with(AGE,getAge(context.getItem())), context.getWorld(), context.getPos());
+	}
+	
+	@Override
+	public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
+		if(group== ModItemRegistry.CHARCOAL_PIT){
+			items.add(new ItemStack(this));
+			ItemStack stack=new ItemStack(this);
+			stack.getOrCreateTag().putInt("stage",2);
+			items.add(stack);
+			stack=new ItemStack(this);
+			stack.getOrCreateTag().putInt("stage",6);
+			items.add(stack);
+			stack=new ItemStack(this);
+			stack.getOrCreateTag().putInt("stage",7);
+			items.add(stack);
+		}
 	}
 }

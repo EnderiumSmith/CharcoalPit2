@@ -180,6 +180,18 @@ public class PileIgnitr {
 		if(event.getName().toString().equals("minecraft:entities/squid")){
 			event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(CharcoalPit.MODID,"calamari"))).build());
 		}
+		if(event.getName().toString().equals("minecraft:chests/simple_dungeon")){
+			event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(CharcoalPit.MODID,"saplings"))).build());
+		}
+		if(event.getName().toString().equals("minecraft:chests/abandoned_mineshaft")){
+			event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(CharcoalPit.MODID,"saplings"))).build());
+		}
+		if(event.getName().toString().equals("minecraft:chests/stronghold_corridor")){
+			event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(CharcoalPit.MODID,"saplings"))).build());
+		}
+		if(event.getName().toString().equals("minecraft:chests/stronghold_crossing")){
+			event.getTable().addPool(LootPool.builder().addEntry(TableLootEntry.builder(new ResourceLocation(CharcoalPit.MODID,"saplings"))).build());
+		}
 	}
 	@SubscribeEvent
 	public static void savePotInventory(ItemCraftedEvent event) {

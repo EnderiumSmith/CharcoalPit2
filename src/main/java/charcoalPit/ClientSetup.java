@@ -16,8 +16,10 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.color.IBlockColor;
 import net.minecraft.client.renderer.color.IItemColor;
+import net.minecraft.item.ItemModelsProperties;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionUtils;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockDisplayReader;
 import net.minecraftforge.api.distmarker.Dist;
@@ -45,6 +47,34 @@ public class ClientSetup {
 		RenderTypeLookup.setRenderLayer(ModBlockRegistry.AppleLeaves,RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(ModBlockRegistry.CherrySapling,RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(ModBlockRegistry.CherryLeaves,RenderType.getCutout());
+		event.enqueueWork(()->{
+			ItemModelsProperties.registerProperty(ModItemRegistry.AppleLeaves, new ResourceLocation(CharcoalPit.MODID,"stage"),(stack, arg2, entity)->{
+				if(stack.hasTag()&&stack.getTag().contains("stage")){
+					if(stack.getTag().getInt("stage")==2)
+						return 0.25F;
+					if(stack.getTag().getInt("stage")==6){
+						return 0.5F;
+					}
+					if(stack.getTag().getInt("stage")==7){
+						return 1F;
+					}
+				}
+				return 0F;
+			});
+			ItemModelsProperties.registerProperty(ModItemRegistry.CherryLeaves, new ResourceLocation(CharcoalPit.MODID,"stage"),(stack,arg2,entity)->{
+				if(stack.hasTag()&&stack.getTag().contains("stage")){
+					if(stack.getTag().getInt("stage")==2)
+						return 0.25F;
+					if(stack.getTag().getInt("stage")==6){
+						return 0.5F;
+					}
+					if(stack.getTag().getInt("stage")==7){
+						return 1F;
+					}
+				}
+				return 0F;
+			});
+		});
 	}
 	@SubscribeEvent
 	public static void registerColors(ColorHandlerEvent.Item event){
@@ -57,6 +87,28 @@ public class ClientSetup {
 				return 0xFFFFFF;
 			}
 		}, ModItemRegistry.AlcoholBottle);
+		
+		event.getItemColors().register(new IItemColor() {
+			@Override
+			public int getColor(ItemStack p_getColor_1_, int p_getColor_2_) {
+				if(p_getColor_2_==0){
+					return 0x48B518;
+				}
+				return 0xFFFFFF;
+			}
+		},ModItemRegistry.AppleLeaves);
+		
+		event.getItemColors().register(new IItemColor() {
+			@Override
+			public int getColor(ItemStack p_getColor_1_, int p_getColor_2_) {
+				if(p_getColor_2_==0){
+					if(p_getColor_1_.hasTag()&&p_getColor_1_.getTag().contains("stage")&&p_getColor_1_.getTag().getInt("stage")==2)
+						return 0xFFFFFF;
+					return 0x48B518;
+				}
+				return 0xFFFFFF;
+			}
+		},ModItemRegistry.CherryLeaves);
 	}
 	
 	@SubscribeEvent
@@ -76,7 +128,7 @@ public class ClientSetup {
 			public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
 				if(p_getColor_4_==0){
 					if(p_getColor_1_.get(BlockFruitLeaves.AGE)>1&&p_getColor_1_.get(BlockFruitLeaves.AGE)<5)
-						return 0xffb7c5;
+						return 0xFFFFFF;
 					else
 						return Minecraft.getInstance().world.getBiome(p_getColor_3_).getFoliageColor();
 				}

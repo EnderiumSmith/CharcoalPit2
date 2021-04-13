@@ -7,6 +7,8 @@ import net.minecraft.block.AbstractBlock.Properties;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.Items;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -61,12 +63,12 @@ public class ModBlockRegistry {
 	public static BlockLeeks Leeks=new BlockLeeks(Properties.from(Blocks.WHEAT));
 	public static BlockCorn Corn=new BlockCorn(Properties.from(Blocks.WHEAT));
 	
-	public static BlockFruitLeaves AppleLeaves=new BlockFruitLeaves(Properties.from(Blocks.OAK_LEAVES), Items.APPLE, 0.333F);
-	public static BlockFruitLeaves CherryLeaves=new BlockFruitLeaves(Properties.from(Blocks.BIRCH_LEAVES), ModItemRegistry.Cherry, 0.666F);
-	
 	public static SaplingBlock AppleSapling=new SaplingBlock(new ModFeatures.AppleTree(),AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT));
-	
 	public static SaplingBlock CherrySapling=new SaplingBlock(new ModFeatures.CherryTree(), AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT));
+	
+	public static BlockFruitLeaves AppleLeaves=new BlockFruitLeaves(Properties.from(Blocks.OAK_LEAVES), null, 0.166F);
+	public static BlockFruitLeaves CherryLeaves=new BlockFruitLeaves(Properties.from(Blocks.BIRCH_LEAVES), null, 0.333F);
+	
 	
 	/*public static DoorBlock BrickDoor=new DoorBlock(AbstractBlock.Properties.from(Blocks.IRON_DOOR)),
 			SandyDoor=new DoorBlock(Properties.from(Blocks.IRON_DOOR)),
