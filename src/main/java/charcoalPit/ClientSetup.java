@@ -47,6 +47,10 @@ public class ClientSetup {
 		RenderTypeLookup.setRenderLayer(ModBlockRegistry.AppleLeaves,RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(ModBlockRegistry.CherrySapling,RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(ModBlockRegistry.CherryLeaves,RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(ModBlockRegistry.DragonLeaves,RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(ModBlockRegistry.DragonSapling,RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(ModBlockRegistry.ChestnutSapling,RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(ModBlockRegistry.ChestnutLeaves,RenderType.getCutout());
 		event.enqueueWork(()->{
 			ItemModelsProperties.registerProperty(ModItemRegistry.AppleLeaves, new ResourceLocation(CharcoalPit.MODID,"stage"),(stack, arg2, entity)->{
 				if(stack.hasTag()&&stack.getTag().contains("stage")){
@@ -62,6 +66,32 @@ public class ClientSetup {
 				return 0F;
 			});
 			ItemModelsProperties.registerProperty(ModItemRegistry.CherryLeaves, new ResourceLocation(CharcoalPit.MODID,"stage"),(stack,arg2,entity)->{
+				if(stack.hasTag()&&stack.getTag().contains("stage")){
+					if(stack.getTag().getInt("stage")==2)
+						return 0.25F;
+					if(stack.getTag().getInt("stage")==6){
+						return 0.5F;
+					}
+					if(stack.getTag().getInt("stage")==7){
+						return 1F;
+					}
+				}
+				return 0F;
+			});
+			ItemModelsProperties.registerProperty(ModItemRegistry.DragonLeaves, new ResourceLocation(CharcoalPit.MODID,"stage"),(stack,arg2,entity)->{
+				if(stack.hasTag()&&stack.getTag().contains("stage")){
+					if(stack.getTag().getInt("stage")==2)
+						return 0.25F;
+					if(stack.getTag().getInt("stage")==6){
+						return 0.5F;
+					}
+					if(stack.getTag().getInt("stage")==7){
+						return 1F;
+					}
+				}
+				return 0F;
+			});
+			ItemModelsProperties.registerProperty(ModItemRegistry.ChestnutLeaves, new ResourceLocation(CharcoalPit.MODID,"stage"),(stack,arg2,entity)->{
 				if(stack.hasTag()&&stack.getTag().contains("stage")){
 					if(stack.getTag().getInt("stage")==2)
 						return 0.25F;
@@ -109,6 +139,26 @@ public class ClientSetup {
 				return 0xFFFFFF;
 			}
 		},ModItemRegistry.CherryLeaves);
+		
+		event.getItemColors().register(new IItemColor() {
+			@Override
+			public int getColor(ItemStack p_getColor_1_, int p_getColor_2_) {
+				if(p_getColor_2_==0){
+					return 0x48B518;
+				}
+				return 0xFFFFFF;
+			}
+		},ModItemRegistry.DragonLeaves);
+		
+		event.getItemColors().register(new IItemColor() {
+			@Override
+			public int getColor(ItemStack p_getColor_1_, int p_getColor_2_) {
+				if(p_getColor_2_==0){
+					return 0x48B518;
+				}
+				return 0xFFFFFF;
+			}
+		},ModItemRegistry.ChestnutLeaves);
 	}
 	
 	@SubscribeEvent
@@ -135,6 +185,36 @@ public class ClientSetup {
 				return 0xFFFFFF;
 			}
 		},ModBlockRegistry.CherryLeaves);
+		
+		event.getBlockColors().register(new IBlockColor() {
+			@Override
+			public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
+				if(p_getColor_4_==0){
+					return 0x48B518;
+				}
+				return 0xFFFFFF;
+			}
+		},ModBlockRegistry.DragonLeaves);
+		
+		event.getBlockColors().register(new IBlockColor() {
+			@Override
+			public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
+				if(p_getColor_4_==0){
+					return Minecraft.getInstance().world.getBiome(p_getColor_3_).getFoliageColor();
+				}
+				return 0xFFFFFF;
+			}
+		},ModBlockRegistry.PalmLeaves);
+		
+		event.getBlockColors().register(new IBlockColor() {
+			@Override
+			public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
+				if(p_getColor_4_==0){
+					return Minecraft.getInstance().world.getBiome(p_getColor_3_).getFoliageColor();
+				}
+				return 0xFFFFFF;
+			}
+		},ModBlockRegistry.ChestnutLeaves);
 	}
 	
 }

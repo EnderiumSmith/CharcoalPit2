@@ -45,6 +45,8 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
@@ -179,6 +181,7 @@ public class BlockBarrel extends Block implements IWaterLoggable {
 		super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
 	}
 	
+	@OnlyIn(Dist.CLIENT)
 	@Override
 	public void addInformation(ItemStack stack, IBlockReader worldIn, List<ITextComponent> tooltip,
 			ITooltipFlag flagIn) {

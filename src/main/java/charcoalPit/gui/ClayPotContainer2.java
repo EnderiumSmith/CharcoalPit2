@@ -3,6 +3,7 @@ package charcoalPit.gui;
 import charcoalPit.CharcoalPit;
 import charcoalPit.core.ModContainerRegistry;
 import charcoalPit.recipe.OreKilnRecipe;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.IInventory;
@@ -27,7 +28,7 @@ public class ClayPotContainer2 extends Container{
 		this.slot=slot;
 		pot=new ClayPotHandler(9, ()->{
 			this.inv.getStackInSlot(this.slot).setTagInfo("inventory", pot.serializeNBT());
-		}, world);
+		}, inv.player.world);
 		if(this.inv.getStackInSlot(this.slot).hasTag()&&
 				this.inv.getStackInSlot(this.slot).getTag().contains("inventory"))
 			pot.deserializeNBT(this.inv.getStackInSlot(this.slot).getTag().getCompound("inventory"));

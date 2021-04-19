@@ -22,6 +22,8 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.network.NetworkHooks;
 import net.minecraftforge.items.ItemStackHandler;
 
@@ -31,6 +33,7 @@ public class ItemClayPot extends Item{
 		super(new Item.Properties().maxStackSize(1).group(ModItemRegistry.CHARCOAL_PIT).maxStackSize(1));
 	}
 	
+	@OnlyIn(Dist.CLIENT)
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		super.addInformation(stack, worldIn, tooltip, flagIn);

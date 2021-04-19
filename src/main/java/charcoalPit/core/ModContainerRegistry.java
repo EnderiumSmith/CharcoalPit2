@@ -23,7 +23,7 @@ public class ModContainerRegistry {
 		return new ClayPotContainer(id, data.readBlockPos(), inv);
 	});*/
 	public static ContainerType<ClayPotContainer2> ClayPot=IForgeContainerType.create((id,inv,data)->{
-		return new ClayPotContainer2(id, inv, data.readByte(), Minecraft.getInstance().world);
+		return new ClayPotContainer2(id, inv, data.readByte(), null);
 	});
 	public static ContainerType<BarrelContainer> Barrel=IForgeContainerType.create((id,inv,data)->{
 		return new BarrelContainer(id, data.readBlockPos(), inv);

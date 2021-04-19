@@ -65,9 +65,15 @@ public class ModBlockRegistry {
 	
 	public static SaplingBlock AppleSapling=new SaplingBlock(new ModFeatures.AppleTree(),AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT));
 	public static SaplingBlock CherrySapling=new SaplingBlock(new ModFeatures.CherryTree(), AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT));
+	public static SaplingBlock DragonSapling=new SaplingBlock(new ModFeatures.DragonTree(),AbstractBlock.Properties.from(Blocks.OAK_SAPLING));
+	public static SaplingBlock PalmSapling=new SaplingBlock(new ModFeatures.PalmTree(),AbstractBlock.Properties.from(Blocks.OAK_SAPLING));
+	public static SaplingBlock ChestnutSapling=new SaplingBlock(new ModFeatures.ChestnutTree(),AbstractBlock.Properties.from(Blocks.OAK_SAPLING));
 	
 	public static BlockFruitLeaves AppleLeaves=new BlockFruitLeaves(Properties.from(Blocks.OAK_LEAVES), null, 0.166F);
 	public static BlockFruitLeaves CherryLeaves=new BlockFruitLeaves(Properties.from(Blocks.BIRCH_LEAVES), null, 0.333F);
+	public static BlockFruitLeaves DragonLeaves=new BlockFruitLeaves(Properties.from(Blocks.BIRCH_LEAVES),null, 0.1F);
+	public static BlockFruitLeaves ChestnutLeaves=new BlockFruitLeaves(Properties.from(Blocks.DARK_OAK_LEAVES),null,0.166F);
+	public static LeavesBlock PalmLeaves=new LeavesBlock(Properties.from(Blocks.JUNGLE_LEAVES));
 	
 	
 	/*public static DoorBlock BrickDoor=new DoorBlock(AbstractBlock.Properties.from(Blocks.IRON_DOOR)),
@@ -91,7 +97,9 @@ public class ModBlockRegistry {
 				Barrel.setRegistryName("barrel")/*,BrickDoor.setRegistryName("brick_door"),SandyDoor.setRegistryName("sandy_door"),NetherDoor.setRegistryName("nether_door"),
 				EndDoor.setRegistryName("end_door")*/,MechanicalBellows.setRegistryName("mechanical_bellows"),Leeks.setRegistryName("leeks"),Corn.setRegistryName("corn"),
 				AppleLeaves.setRegistryName("apple_leaves"),AppleSapling.setRegistryName("apple_sapling"),CherrySapling.setRegistryName("cherry_sapling"),
-				CherryLeaves.setRegistryName("cherry_leaves"));
+				CherryLeaves.setRegistryName("cherry_leaves"),DragonSapling.setRegistryName("dragon_sapling"),DragonLeaves.setRegistryName("dragon_leaves"),
+				PalmSapling.setRegistryName("palm_sapling"),PalmLeaves.setRegistryName("palm_leaves"),
+				ChestnutSapling.setRegistryName("chestnut_sapling"),ChestnutLeaves.setRegistryName("chestnut_leaves"));
 		event.getRegistry().registerAll(CeramicPot.setRegistryName("ceramic_pot"),YellowPot.setRegistryName("yellow_pot"),WhitePot.setRegistryName("white_pot"),
 				RedPot.setRegistryName("red_pot"),PurplePot.setRegistryName("purple_pot"),PinkPot.setRegistryName("pink_pot"),OrangePot.setRegistryName("orange_pot"),
 				MagentaPot.setRegistryName("magenta_pot"),LimePot.setRegistryName("lime_pot"),LightGrayPot.setRegistryName("light_gray_pot"),

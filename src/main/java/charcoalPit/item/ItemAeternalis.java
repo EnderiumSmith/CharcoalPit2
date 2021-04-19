@@ -12,6 +12,8 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ItemAeternalis extends Item{
 
@@ -39,6 +41,7 @@ public class ItemAeternalis extends Item{
 		return true;
 	}
 	
+	@OnlyIn(Dist.CLIENT)
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		tooltip.add(new StringTextComponent(TextFormatting.LIGHT_PURPLE+"An ancient relic that poseses the power to burn eternal"));
