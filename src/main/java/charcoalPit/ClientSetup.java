@@ -22,6 +22,7 @@ import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockDisplayReader;
+import net.minecraft.world.biome.BiomeColors;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -51,6 +52,10 @@ public class ClientSetup {
 		RenderTypeLookup.setRenderLayer(ModBlockRegistry.DragonSapling,RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(ModBlockRegistry.ChestnutSapling,RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(ModBlockRegistry.ChestnutLeaves,RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(ModBlockRegistry.BanananaPod,RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(ModBlockRegistry.CoconutPod,RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(ModBlockRegistry.BananaSapling,RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(ModBlockRegistry.CoconutSapling,RenderType.getCutout());
 		event.enqueueWork(()->{
 			ItemModelsProperties.registerProperty(ModItemRegistry.AppleLeaves, new ResourceLocation(CharcoalPit.MODID,"stage"),(stack, arg2, entity)->{
 				if(stack.hasTag()&&stack.getTag().contains("stage")){
@@ -159,6 +164,26 @@ public class ClientSetup {
 				return 0xFFFFFF;
 			}
 		},ModItemRegistry.ChestnutLeaves);
+		
+		event.getItemColors().register(new IItemColor() {
+			@Override
+			public int getColor(ItemStack p_getColor_1_, int p_getColor_2_) {
+				if(p_getColor_2_==0){
+					return 0x48B518;
+				}
+				return 0xFFFFFF;
+			}
+		},ModItemRegistry.BananaLeaves);
+		
+		event.getItemColors().register(new IItemColor() {
+			@Override
+			public int getColor(ItemStack p_getColor_1_, int p_getColor_2_) {
+				if(p_getColor_2_==0){
+					return 0x48B518;
+				}
+				return 0xFFFFFF;
+			}
+		},ModItemRegistry.CoconutLeaves);
 	}
 	
 	@SubscribeEvent
@@ -167,7 +192,7 @@ public class ClientSetup {
 			@Override
 			public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
 				if(p_getColor_4_==0){
-					return Minecraft.getInstance().world.getBiome(p_getColor_3_).getFoliageColor();
+					return BiomeColors.getFoliageColor(p_getColor_2_,p_getColor_3_);
 				}
 				return 0xFFFFFF;
 			}
@@ -180,7 +205,7 @@ public class ClientSetup {
 					if(p_getColor_1_.get(BlockFruitLeaves.AGE)>1&&p_getColor_1_.get(BlockFruitLeaves.AGE)<5)
 						return 0xFFFFFF;
 					else
-						return Minecraft.getInstance().world.getBiome(p_getColor_3_).getFoliageColor();
+						return BiomeColors.getFoliageColor(p_getColor_2_,p_getColor_3_);
 				}
 				return 0xFFFFFF;
 			}
@@ -200,21 +225,31 @@ public class ClientSetup {
 			@Override
 			public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
 				if(p_getColor_4_==0){
-					return Minecraft.getInstance().world.getBiome(p_getColor_3_).getFoliageColor();
+					return BiomeColors.getFoliageColor(p_getColor_2_,p_getColor_3_);
 				}
 				return 0xFFFFFF;
 			}
-		},ModBlockRegistry.PalmLeaves);
+		},ModBlockRegistry.BananaLeaves);
 		
 		event.getBlockColors().register(new IBlockColor() {
 			@Override
 			public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
 				if(p_getColor_4_==0){
-					return Minecraft.getInstance().world.getBiome(p_getColor_3_).getFoliageColor();
+					return BiomeColors.getFoliageColor(p_getColor_2_,p_getColor_3_);
 				}
 				return 0xFFFFFF;
 			}
 		},ModBlockRegistry.ChestnutLeaves);
+		
+		event.getBlockColors().register(new IBlockColor() {
+			@Override
+			public int getColor(BlockState p_getColor_1_, @Nullable IBlockDisplayReader p_getColor_2_, @Nullable BlockPos p_getColor_3_, int p_getColor_4_) {
+				if(p_getColor_4_==0){
+					return BiomeColors.getFoliageColor(p_getColor_2_,p_getColor_3_);
+				}
+				return 0xFFFFFF;
+			}
+		},ModBlockRegistry.CoconutLeaves);
 	}
 	
 }

@@ -5,6 +5,7 @@
     "charcoal_pit:kernels_from_grass",
     "charcoal_pit:cherry_from_birch",
     "charcoal_pit:dragon_from_acacia",
-    "charcoal_pit:chestnut_from_dark_oak"
+    "charcoal_pit:chestnut_from_dark_oak",
+    "charcoal_pit:fruit_from_jungle"
   ]
 }

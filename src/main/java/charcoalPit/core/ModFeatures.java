@@ -37,8 +37,9 @@ public class ModFeatures {
 	public static ConfiguredFeature<BaseTreeFeatureConfig, ?> APPLE;
 	public static ConfiguredFeature<BaseTreeFeatureConfig, ?> CHERRY;
 	public static ConfiguredFeature<BaseTreeFeatureConfig, ?> DRAGON;
-	public static ConfiguredFeature<BaseTreeFeatureConfig, ?> PALM;
+	public static ConfiguredFeature<BaseTreeFeatureConfig, ?> BANANA;
 	public static ConfiguredFeature<BaseTreeFeatureConfig, ?> CHESTNUT;
+	public static ConfiguredFeature<BaseTreeFeatureConfig, ?> COCONUT;
 	
 	@SubscribeEvent
 	public static void registerPlacers(RegistryEvent.Register<FoliagePlacerType<?>> event){
@@ -55,8 +56,9 @@ public class ModFeatures {
 		APPLE = WorldGenRegistries.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation(CharcoalPit.MODID,"apple"), Feature.TREE.withConfiguration((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()), new SimpleBlockStateProvider(ModBlockRegistry.AppleLeaves.getDefaultState()), new BlobFoliagePlacer(FeatureSpread.func_242252_a(2), FeatureSpread.func_242252_a(0), 3), new StraightTrunkPlacer(4, 2, 0), new TwoLayerFeature(1, 0, 1))).setIgnoreVines().build()));
 		CHERRY = WorldGenRegistries.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation(CharcoalPit.MODID,"cherry"), Feature.TREE.withConfiguration((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.BIRCH_LOG.getDefaultState()), new SimpleBlockStateProvider(ModBlockRegistry.CherryLeaves.getDefaultState()), new BlobFoliagePlacer(FeatureSpread.func_242252_a(2), FeatureSpread.func_242252_a(0), 3), new StraightTrunkPlacer(5, 2, 0), new TwoLayerFeature(1, 0, 1))).setIgnoreVines().build()));
 		DRAGON = WorldGenRegistries.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation(CharcoalPit.MODID,"dragon"), Feature.TREE.withConfiguration((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.ACACIA_LOG.getDefaultState()), new SimpleBlockStateProvider(ModBlockRegistry.DragonLeaves.getDefaultState()), new DragonFoliagePlacer(FeatureSpread.func_242252_a(2), FeatureSpread.func_242252_a(0)), new StraightTrunkPlacer(3, 0, 0), new TwoLayerFeature(1, 0, 1))).setIgnoreVines().build()));
-		PALM=WorldGenRegistries.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation(CharcoalPit.MODID, "palm"),Feature.TREE.withConfiguration((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.JUNGLE_LOG.getDefaultState()), new SimpleBlockStateProvider(ModBlockRegistry.PalmLeaves.getDefaultState()), new PalmFoliagePlacer(FeatureSpread.func_242252_a(2), FeatureSpread.func_242252_a(0)), new BentTrunkPlacer(5, 2, 2), new TwoLayerFeature(1, 0, 2))).setIgnoreVines().build()));
+		BANANA=WorldGenRegistries.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation(CharcoalPit.MODID, "banana"),Feature.TREE.withConfiguration((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.JUNGLE_LOG.getDefaultState()), new SimpleBlockStateProvider(ModBlockRegistry.BananaLeaves.getDefaultState()), new PalmFoliagePlacer(FeatureSpread.func_242252_a(2), FeatureSpread.func_242252_a(0)), new BentTrunkPlacer(5, 2, 2), new TwoLayerFeature(1, 0, 2))).setIgnoreVines().build()));
 		CHESTNUT=WorldGenRegistries.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation(CharcoalPit.MODID, "chestnut"),Feature.TREE.withConfiguration((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.DARK_OAK_LOG.getDefaultState()), new SimpleBlockStateProvider(ModBlockRegistry.ChestnutLeaves.getDefaultState()), new DarkOakFoliagePlacer(FeatureSpread.func_242252_a(0), FeatureSpread.func_242252_a(0)), new DarkOakTrunkPlacer(6, 2, 1), new ThreeLayerFeature(1, 1, 0, 1, 2, OptionalInt.empty()))).setMaxWaterDepth(Integer.MAX_VALUE).func_236702_a_(Heightmap.Type.MOTION_BLOCKING).setIgnoreVines().build()));
+		COCONUT=WorldGenRegistries.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation(CharcoalPit.MODID, "coconut"),Feature.TREE.withConfiguration((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.JUNGLE_LOG.getDefaultState()), new SimpleBlockStateProvider(ModBlockRegistry.CoconutLeaves.getDefaultState()), new PalmFoliagePlacer(FeatureSpread.func_242252_a(2), FeatureSpread.func_242252_a(0)), new BentTrunkPlacer(5, 2, 2), new TwoLayerFeature(1, 0, 2))).setIgnoreVines().build()));
 		
 		ModBlockRegistry.AppleLeaves.fruit= Items.APPLE;
 		ModBlockRegistry.CherryLeaves.fruit=ModItemRegistry.Cherry;
@@ -88,12 +90,12 @@ public class ModFeatures {
 			return DRAGON;
 		}
 	}
-	public static class PalmTree extends Tree{
+	public static class BananaTree extends Tree{
 		
 		@Nullable
 		@Override
 		protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean largeHive) {
-			return PALM;
+			return BANANA;
 		}
 	}
 	public static class ChestnutTree extends BigTree {
@@ -108,6 +110,14 @@ public class ModFeatures {
 		@Override
 		protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getHugeTreeFeature(Random rand) {
 			return CHESTNUT;
+		}
+	}
+	public static class CoconutTree extends Tree{
+		
+		@Nullable
+		@Override
+		protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean largeHive) {
+			return COCONUT;
 		}
 	}
 	

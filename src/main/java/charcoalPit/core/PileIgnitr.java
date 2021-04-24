@@ -23,10 +23,12 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
+import net.minecraftforge.common.BasicTrade;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.ItemCraftedEvent;
 import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.event.world.BlockEvent.NeighborNotifyEvent;
 import net.minecraftforge.eventbus.api.Event.Result;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -208,5 +210,22 @@ public class PileIgnitr {
 	public static void furnaceFuel(FurnaceFuelBurnTimeEvent event) {
 		if(event.getItemStack().getItem()==ModItemRegistry.CreosoteBucket)
 			event.setBurnTime(4800);
+	}
+	
+	public static BasicTrade AppleSapling=new BasicTrade(12,new ItemStack(ModItemRegistry.AppleSapling),6,1);
+	public static BasicTrade CherrySapling=new BasicTrade(12,new ItemStack(ModItemRegistry.CherrySapling),6,1);
+	public static BasicTrade ChestnutSapling=new BasicTrade(6,new ItemStack(ModItemRegistry.ChestnutSapling),6,1);
+	public static BasicTrade DragonSapling=new BasicTrade(18,new ItemStack(ModItemRegistry.DragonSapling),6,1);
+	public static BasicTrade BananaSapling=new BasicTrade(12,new ItemStack(ModItemRegistry.BananaSapling),6,1);
+	public static BasicTrade CoconutSapling=new BasicTrade(12,new ItemStack(ModItemRegistry.CoconutSapling),6,1);
+	
+	@SubscribeEvent
+	public static void SaplingTrades(WandererTradesEvent event){
+		event.getRareTrades().add(AppleSapling);
+		event.getRareTrades().add(CherrySapling);
+		event.getRareTrades().add(ChestnutSapling);
+		event.getRareTrades().add(DragonSapling);
+		event.getRareTrades().add(BananaSapling);
+		event.getRareTrades().add(CoconutSapling);
 	}
 }

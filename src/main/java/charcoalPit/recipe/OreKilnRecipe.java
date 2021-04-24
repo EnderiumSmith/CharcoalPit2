@@ -18,10 +18,12 @@ import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.tileentity.AbstractFurnaceTileEntity;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.registries.ForgeRegistryEntry;
@@ -88,7 +90,7 @@ public class OreKilnRecipe implements IRecipe<IInventory>{
 	}
 	
 	public static int oreKilnGetFuelAvailable(IItemHandler inventory) {
-		return inventory.getStackInSlot(0).getCount()*(inventory.getStackInSlot(0).getBurnTime()/200);
+		return inventory.getStackInSlot(0).getCount()*(ForgeHooks.getBurnTime(inventory.getStackInSlot(0))/200);
 	}
 	
 	public static boolean oreKilnIsEmpty(IItemHandler inventory) {

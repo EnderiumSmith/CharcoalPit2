@@ -93,17 +93,25 @@ public class ModItemRegistry {
 	public static Item DragonFruit=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(6).saturation(0.6F).setAlwaysEdible().effect(()->new EffectInstance(Effects.FIRE_RESISTANCE,20*10),1F).build()));
 	public static Item ChestNut=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS));
 	public static Item CookedChestNut=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(4).saturation(1.2F).build()));
+	public static Item Bananana=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(5).saturation(0.6F).build()));
+	public static ItemKebabs Cococonut=new ItemKebabs(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(4).saturation(1.2F).build()).containerItem(Items.BOWL));
+	public static Item TurtleRaw=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(2).saturation(0.2F).meat().effect(()->new EffectInstance(Effects.HUNGER,20*30),0.3F).build()));
+	public static Item TurtleCooked=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(4).saturation(1.2F).meat().build()));
+	public static ItemKebabs TurtleSoup=new ItemKebabs(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(8).saturation(1.6F).meat().build()).containerItem(Items.BOWL));
 	
 	public static BlockItem AppleSapling=new BlockItem(ModBlockRegistry.AppleSapling,new Item.Properties().group(CHARCOAL_PIT));
 	public static BlockItem CherrySapling=new BlockItem(ModBlockRegistry.CherrySapling,new Item.Properties().group(CHARCOAL_PIT));
 	public static BlockItem DragonSapling=new BlockItem(ModBlockRegistry.DragonSapling, new Item.Properties().group(CHARCOAL_PIT));
-	public static BlockItem PalmSapling=new BlockItem(ModBlockRegistry.PalmSapling, new Item.Properties().group(CHARCOAL_PIT));
+	public static BlockItem BananaSapling=new BlockItem(ModBlockRegistry.BananaSapling, new Item.Properties().group(CHARCOAL_PIT));
 	public static BlockItem ChestnutSapling=new BlockItem(ModBlockRegistry.ChestnutSapling, new Item.Properties().group(CHARCOAL_PIT));
+	public static BlockItem CoconutSapling=new BlockItem(ModBlockRegistry.CoconutSapling,new Item.Properties().group(CHARCOAL_PIT));
 	
 	public static ItemBlockLeaves AppleLeaves=new ItemBlockLeaves(ModBlockRegistry.AppleLeaves,new Item.Properties().group(CHARCOAL_PIT));
 	public static ItemBlockLeaves CherryLeaves=new ItemBlockLeaves(ModBlockRegistry.CherryLeaves,new Item.Properties().group(CHARCOAL_PIT));
 	public static ItemBlockLeaves DragonLeaves=new ItemBlockLeaves(ModBlockRegistry.DragonLeaves,new Item.Properties().group(CHARCOAL_PIT));
 	public static ItemBlockLeaves ChestnutLeaves=new ItemBlockLeaves(ModBlockRegistry.ChestnutLeaves,new Item.Properties().group(CHARCOAL_PIT));
+	public static BlockItem BananaLeaves=new BlockItem(ModBlockRegistry.BananaLeaves,new Item.Properties().group(CHARCOAL_PIT));
+	public static BlockItem CoconutLeaves=new BlockItem(ModBlockRegistry.CoconutLeaves,new Item.Properties().group(CHARCOAL_PIT));
 	
 	/*public static TallBlockItem BrickDoor=new TallBlockItem(ModBlockRegistry.BrickDoor,new Item.Properties().group(CHARCOAL_PIT)),
 			SandyDoor=new TallBlockItem(ModBlockRegistry.SandyDoor,new Item.Properties().group(CHARCOAL_PIT)),
@@ -124,8 +132,9 @@ public class ModItemRegistry {
 				AppleSapling.setRegistryName("apple_sapling"),CherrySapling.setRegistryName("cherry_sapling"),
 				AppleLeaves.setRegistryName("apple_leaves"),CherryLeaves.setRegistryName("cherry_leaves"),
 				DragonSapling.setRegistryName("dragon_sapling"),DragonLeaves.setRegistryName("dragon_leaves"),
-				PalmSapling.setRegistryName("palm_sapling"),
-				ChestnutSapling.setRegistryName("chestnut_sapling"),ChestnutLeaves.setRegistryName("chestnut_leaves"));
+				BananaSapling.setRegistryName("banana_sapling"),BananaLeaves.setRegistryName("banana_leaves"),
+				ChestnutSapling.setRegistryName("chestnut_sapling"),ChestnutLeaves.setRegistryName("chestnut_leaves"),
+				CoconutLeaves.setRegistryName("coconut_leaves"),CoconutSapling.setRegistryName("coconut_sapling"));
 		event.getRegistry().registerAll(Straw.setRegistryName("straw"), Ash.setRegistryName("ash"), Coke.setRegistryName("coke"), 
 				Aeternalis.setRegistryName("aeternalis_fuel"), Fertilizer.setRegistryName("fertilizer"), FireStarter.setRegistryName("fire_starter"),
 				CreosoteBucket.setRegistryName("creosote_bucket"),ClayPot.setRegistryName("clay_pot"),BloomCool.setRegistryName("bloom_cool"),BloomFail.setRegistryName("bloom_fail"),
@@ -137,7 +146,8 @@ public class ModItemRegistry {
 				BeetStew.setRegistryName("beet_stew"),Calamari.setRegistryName("calamari"),CookedCalamri.setRegistryName("cooked_calamari"),CookedEgg.setRegistryName("cooked_egg"),
 				Corn.setRegistryName("corn"),CornKernels.setRegistryName("corn_kernels"),PopCorn.setRegistryName("popcorn"),CornStew.setRegistryName("corn_stew"),
 				Sushi.setRegistryName("sushi"),SushiCooked.setRegistryName("cooked_sushi"),Fugu.setRegistryName("fugu"),Cherry.setRegistryName("cherry"),DragonFruit.setRegistryName("dragon_fruit"),
-				ChestNut.setRegistryName("chestnut"),CookedChestNut.setRegistryName("cooked_chestnut"));
+				ChestNut.setRegistryName("chestnut"),CookedChestNut.setRegistryName("cooked_chestnut"),Bananana.setRegistryName("banana"),Cococonut.setRegistryName("coconut"),
+				TurtleRaw.setRegistryName("turtle_raw"),TurtleCooked.setRegistryName("turtle_cooked"),TurtleSoup.setRegistryName("turtle_stew"));
 		event.getRegistry().registerAll(CeramicPot.setRegistryName("ceramic_pot"),YellowPot.setRegistryName("yellow_pot"),WhitePot.setRegistryName("white_pot"),
 				RedPot.setRegistryName("red_pot"),PurplePot.setRegistryName("purple_pot"),PinkPot.setRegistryName("pink_pot"),OrangePot.setRegistryName("orange_pot"),
 				MagentaPot.setRegistryName("magenta_pot"),LimePot.setRegistryName("lime_pot"),LightGrayPot.setRegistryName("light_gray_pot"),

@@ -17,7 +17,8 @@ public class ModLootModifiers {
 				new KernalsFromGrass.Serializer().setRegistryName("kernels_from_grass"),
 				new CherryFromBirch.Serializer().setRegistryName("cherry_from_birch"),
 				new DragonFromAcacia.Serializer().setRegistryName("dragon_from_acacia"),
-				new ChestnutFromDarkOak.Serializer().setRegistryName("chestnut_from_dark_oak"));
+				new ChestnutFromDarkOak.Serializer().setRegistryName("chestnut_from_dark_oak"),
+				new FruitFromJungle.Serializer().setRegistryName("fruit_from_jungle"));
 	}
 	
 }
