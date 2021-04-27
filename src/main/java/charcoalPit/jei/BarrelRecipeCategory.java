@@ -64,11 +64,14 @@ public class BarrelRecipeCategory implements IRecipeCategory<BarrelRecipe> {
 	
 	@Override
 	public void setIngredients(BarrelRecipe recipe, IIngredients iIngredients) {
-		ArrayList<ItemStack> list=new ArrayList<>();
+		/*ArrayList<ItemStack> list=new ArrayList<>();
 		for(ItemStack s:recipe.item_in.getMatchingStacks()){
 			list.add(new ItemStack(s.getItem(), recipe.in_amount));
 		}
-		iIngredients.setInputs(VanillaTypes.ITEM, list);
+		iIngredients.setInputs(VanillaTypes.ITEM, list);*/
+		ArrayList<List<ItemStack>> list2=new ArrayList<>();
+		list2.add(Arrays.asList(recipe.item_in.getMatchingStacks()));
+		iIngredients.setInputLists(VanillaTypes.ITEM,list2);
 		iIngredients.setInput(VanillaTypes.FLUID,new FluidStack(recipe.fluid_in.getFluid(),recipe.fluid_in.amount,recipe.fluid_in.nbt));
 		if((recipe.flags&0b100)==0b100){
 			iIngredients.setOutput(VanillaTypes.ITEM,new ItemStack(recipe.item_out.getMatchingStacks()[0].getItem(),recipe.out_amount,recipe.nbt_out));

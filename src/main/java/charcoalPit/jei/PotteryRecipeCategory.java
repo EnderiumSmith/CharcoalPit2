@@ -67,7 +67,10 @@ public class PotteryRecipeCategory implements IRecipeCategory<PotteryKilnRecipe>
 	
 	@Override
 	public void setIngredients(PotteryKilnRecipe recipe, IIngredients iIngredients) {
-		iIngredients.setInputs(VanillaTypes.ITEM, Arrays.asList(recipe.input.getMatchingStacks()));
+		ArrayList<List<ItemStack>> list=new ArrayList<>();
+		list.add(Arrays.asList(recipe.input.getMatchingStacks()));
+		iIngredients.setInputLists(VanillaTypes.ITEM,list);
+		//iIngredients.setInputs(VanillaTypes.ITEM, Arrays.asList(recipe.input.getMatchingStacks()));
 		iIngredients.setOutput(VanillaTypes.ITEM, new ItemStack(recipe.output));
 	}
 	

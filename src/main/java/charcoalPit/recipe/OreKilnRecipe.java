@@ -221,7 +221,7 @@ public class OreKilnRecipe implements IRecipe<IInventory>{
 			int l=buffer.readInt();
 			Ingredient[] in=new Ingredient[l];
 			for(int i=0;i<l;i++) {
-				in[l]=Ingredient.read(buffer);
+				in[i]=Ingredient.read(buffer);
 			}
 			int a=buffer.readInt();
 			Ingredient o=Ingredient.read(buffer);
