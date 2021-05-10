@@ -12,7 +12,9 @@ import charcoalPit.tile.TilePotteryKiln;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CauldronBlock;
+import net.minecraft.entity.merchant.villager.VillagerProfession;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.TableLootEntry;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -28,6 +30,7 @@ import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.ItemCraftedEvent;
 import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.event.world.BlockEvent.NeighborNotifyEvent;
 import net.minecraftforge.eventbus.api.Event.Result;
@@ -35,6 +38,7 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import org.lwjgl.system.CallbackI;
 
 @EventBusSubscriber(modid=CharcoalPit.MODID, bus=Bus.FORGE)
 public class PileIgnitr {
@@ -227,5 +231,28 @@ public class PileIgnitr {
 		event.getRareTrades().add(DragonSapling);
 		event.getRareTrades().add(BananaSapling);
 		event.getRareTrades().add(CoconutSapling);
+	}
+	
+	public static BasicTrade Corn=new BasicTrade(new ItemStack(ModItemRegistry.Corn,24),ItemStack.EMPTY, new ItemStack(Items.EMERALD),16,2,0.05F);
+	public static BasicTrade Leek=new BasicTrade(new ItemStack(ModItemRegistry.Leek,20),ItemStack.EMPTY, new ItemStack(Items.EMERALD),16,2,0.05F);
+	
+	public static BasicTrade Chocolate=new BasicTrade(1, new ItemStack(ModItemRegistry.Chocolate,4),12,15, 0.05F);
+	public static BasicTrade Cherry=new BasicTrade(1,new ItemStack(ModItemRegistry.Cherry,10),16,5,0.05F);
+	
+	public static BasicTrade Kebab=new BasicTrade(1,new ItemStack(ModItemRegistry.Kebabs,6),12,30,0.05F);
+	public static BasicTrade Vinegar=new BasicTrade(2,new ItemStack(ModItemRegistry.VinegarBottle,4),12,30,0.05F);
+	
+	@SubscribeEvent
+	public static void CropTrades(VillagerTradesEvent event){
+		if(event.getType()== VillagerProfession.FARMER){
+			event.getTrades().get(1).add(Corn);
+			event.getTrades().get(1).add(Leek);
+			event.getTrades().get(2).add(Cherry);
+			event.getTrades().get(4).add(Chocolate);
+		}
+		if(event.getType()==VillagerProfession.BUTCHER){
+			event.getTrades().get(4).add(Vinegar);
+			event.getTrades().get(5).add(Kebab);
+		}
 	}
 }

@@ -98,6 +98,8 @@ public class ModItemRegistry {
 	public static Item TurtleRaw=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(2).saturation(0.2F).meat().effect(()->new EffectInstance(Effects.HUNGER,20*30),0.3F).build()));
 	public static Item TurtleCooked=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(4).saturation(1.2F).meat().build()));
 	public static ItemKebabs TurtleSoup=new ItemKebabs(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(8).saturation(1.6F).meat().build()).containerItem(Items.BOWL));
+	public static Item ChocoPoweder=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS));
+	public static Item Chocolate=new Item(new Item.Properties().group(CHARCOAL_PIT_FOODS).food(new Food.Builder().hunger(4).saturation(0.2F).fastToEat().build()));
 	
 	public static BlockItem AppleSapling=new BlockItem(ModBlockRegistry.AppleSapling,new Item.Properties().group(CHARCOAL_PIT));
 	public static BlockItem CherrySapling=new BlockItem(ModBlockRegistry.CherrySapling,new Item.Properties().group(CHARCOAL_PIT));
@@ -147,7 +149,8 @@ public class ModItemRegistry {
 				Corn.setRegistryName("corn"),CornKernels.setRegistryName("corn_kernels"),PopCorn.setRegistryName("popcorn"),CornStew.setRegistryName("corn_stew"),
 				Sushi.setRegistryName("sushi"),SushiCooked.setRegistryName("cooked_sushi"),Fugu.setRegistryName("fugu"),Cherry.setRegistryName("cherry"),DragonFruit.setRegistryName("dragon_fruit"),
 				ChestNut.setRegistryName("chestnut"),CookedChestNut.setRegistryName("cooked_chestnut"),Bananana.setRegistryName("banana"),Cococonut.setRegistryName("coconut"),
-				TurtleRaw.setRegistryName("turtle_raw"),TurtleCooked.setRegistryName("turtle_cooked"),TurtleSoup.setRegistryName("turtle_stew"));
+				TurtleRaw.setRegistryName("turtle_raw"),TurtleCooked.setRegistryName("turtle_cooked"),TurtleSoup.setRegistryName("turtle_stew"),
+				ChocoPoweder.setRegistryName("choco_powder"),Chocolate.setRegistryName("chocolate"));
 		event.getRegistry().registerAll(CeramicPot.setRegistryName("ceramic_pot"),YellowPot.setRegistryName("yellow_pot"),WhitePot.setRegistryName("white_pot"),
 				RedPot.setRegistryName("red_pot"),PurplePot.setRegistryName("purple_pot"),PinkPot.setRegistryName("pink_pot"),OrangePot.setRegistryName("orange_pot"),
 				MagentaPot.setRegistryName("magenta_pot"),LimePot.setRegistryName("lime_pot"),LightGrayPot.setRegistryName("light_gray_pot"),
